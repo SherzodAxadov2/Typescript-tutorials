@@ -75,3 +75,13 @@
 //   name: "John",
 //   age: 12,
 // };
+
+// dynamic any types
+// let age: any;
+// age = 23;
+// age = true;
+
+let mixed: any[] = [];
+mixed.push(32)
+mixed.push({age:24})
+mixed.push(false)

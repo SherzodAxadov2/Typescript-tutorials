@@ -41,6 +41,27 @@
 // console.log(Array.isArray(arr));
 // arr.push(232)
 // union types
-var mixedArray = [];
-mixedArray.push('sqwd');
+// let mixedArray: (string | number)[] = []
+// mixedArray.push('sqwd')
 // mixedArray.push(true)
+// object
+// let user: object;
+// user = { age: 32, name: "John" };
+// user = []
+// let userTwo: {
+//   name: string;
+//   age: number;
+//   carColour: string;
+// };
+// userTwo = {
+//   name: "John",
+//   age: 12,
+// };
+// dynamic any types
+// let age: any;
+// age = 23;
+// age = true;
+var mixed = [];
+mixed.push(32);
+mixed.push({ age: 24 });
+mixed.push(false);
