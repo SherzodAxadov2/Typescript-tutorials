@@ -82,6 +82,8 @@
 // age = true;
 
 let mixed: any[] = [];
-mixed.push(32)
-mixed.push({age:24})
-mixed.push(false)
+// mixed.push(32)
+// mixed.push({age:24})
+// mixed.push(false)
+
+mixed.pop()

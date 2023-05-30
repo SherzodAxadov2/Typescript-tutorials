@@ -1,3 +1,4 @@
+"use strict";
 // const character = "mario";
 // console.log(character);
 // const inputs = document.querySelectorAll("input");
@@ -61,7 +62,8 @@
 // let age: any;
 // age = 23;
 // age = true;
-var mixed = [];
-mixed.push(32);
-mixed.push({ age: 24 });
-mixed.push(false);
+let mixed = [];
+// mixed.push(32)
+// mixed.push({age:24})
+// mixed.push(false)
+mixed.pop();
