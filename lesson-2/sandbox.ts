@@ -43,3 +43,35 @@
 //   colorCar: "black",
 //   // skills:['clear']
 // };
+
+// explicit tpypes
+// let userName: string;
+// let age: number;
+// age = 'John';
+// userName = 'John';
+
+// for arrays
+// let arr: string[] = [];
+// console.log(Array.isArray(arr));
+// arr.push(232)
+
+// union types
+// let mixedArray: (string | number)[] = []
+// mixedArray.push('sqwd')
+// mixedArray.push(true)
+
+// object
+// let user: object;
+// user = { age: 32, name: "John" };
+// user = []
+
+// let userTwo: {
+//   name: string;
+//   age: number;
+//   carColour: string;
+// };
+
+// userTwo = {
+//   name: "John",
+//   age: 12,
+// };

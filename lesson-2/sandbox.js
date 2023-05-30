@@ -31,3 +31,16 @@
 //   colorCar: "black",
 //   // skills:['clear']
 // };
+// explicit tpypes
+// let userName: string;
+// let age: number;
+// age = 'John';
+// userName = 'John';
+// for arrays
+// let arr: string[] = [];
+// console.log(Array.isArray(arr));
+// arr.push(232)
+// union types
+var mixedArray = [];
+mixedArray.push('sqwd');
+// mixedArray.push(true)
