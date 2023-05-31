@@ -132,16 +132,35 @@
 // console.log(mergeAlternately("ab", "pqrs"));
 
 // Leetcode 2/75
-function removeElement(nums: number[], val: number): number {
-  let k: number = 0;
+// function removeElement(nums: number[], val: number): number {
+//   let k: number = 0;
 
-  while (nums.indexOf(val) != -1) {
-    nums.splice(nums.indexOf(val), 1);
-  }
-  k = nums.length;
-  console.log(nums);
+//   while (nums.indexOf(val) != -1) {
+//     nums.splice(nums.indexOf(val), 1);
+//   }
+//   k = nums.length;
+//   console.log(nums);
 
-  return k;
-}
+//   return k;
+// }
 
-console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+// console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+
+// Type aliases
+
+type stringOrNumber = string | number;
+type Obj = {
+  userCount: stringOrNumber;
+  isChild: boolean;
+  age: number;
+};
+
+let helloFn = (user: Obj) => {
+  console.log(
+    `${user.userCount}, I'm a ${user.isChild ? "children" : "young man"}, I'm ${
+      user.age
+    } years old` 
+  );
+};
+
+helloFn({ userCount: 24, age: 20, isChild: false });
