@@ -148,19 +148,56 @@
 
 // Type aliases
 
-type stringOrNumber = string | number;
-type Obj = {
-  userCount: stringOrNumber;
-  isChild: boolean;
+// type stringOrNumber = string | number;
+// type Obj = {
+//   userCount: stringOrNumber;
+//   isChild: boolean;
+//   age: number;
+// };
+
+// let helloFn = (user: Obj) => {
+//   console.log(
+//     `${user.userCount}, I'm a ${user.isChild ? "children" : "young man"}, I'm ${
+//       user.age
+//     } years old`
+//   );
+// };
+
+// helloFn({ userCount: 24, age: 20, isChild: false });
+
+// Function signature
+
+// example 1
+
+// let greeting: (a:string, b:string) => void
+
+// greeting = (name: string, say: string) => {
+//   console.log(`${name} says ${say}`);
+// }
+
+// greeting("John", 'hello')
+
+// example 2
+// let calc: (name: number, say: number, somethingelse: string) => number;
+
+// calc = (a: number, b: number, c: string): number => {
+//   if (c === "multiple") {
+//     return a * b;
+//   } else {
+//     return a / b;
+//   }
+// };
+// console.log(calc(1293, 29,'multiple'));
+
+// example 3
+let seeDetails: (obj: { name: string; age: number }) => string;
+type user = {
+  name: string;
   age: number;
 };
 
-let helloFn = (user: Obj) => {
-  console.log(
-    `${user.userCount}, I'm a ${user.isChild ? "children" : "young man"}, I'm ${
-      user.age
-    } years old` 
-  );
+seeDetails = (user: user): string => {
+  return `Hello00, my name is ${user.name} and I am ${user.age} years old`;
 };
 
-helloFn({ userCount: 24, age: 20, isChild: false });
+console.log(seeDetails({ name: "John", age: 23 }));
