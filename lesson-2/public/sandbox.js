@@ -62,8 +62,51 @@
 // let age: any;
 // age = 23;
 // age = true;
-let mixed = [];
+// let mixed: any[] = [];
 // mixed.push(32)
 // mixed.push({age:24})
 // mixed.push(false)
-mixed.pop();
+// mixed.pop()
+// FUNCTIONS
+// let greet = ():string=>{
+//     console.log('oadf');
+// }
+// parametres
+// let multiple = (a:number, b:number=10): void =>{
+//     console.log(a+b);
+// }
+// multiple(3)
+// let multipleAnother = (a: number, b: number = 10): unknown => {
+//   return a + b + 'dlasmfflskadf';
+// };
+// function mergeAlternately(word1: string, word2: string): string {
+//   let merged: string = "";
+//   let katta: string;
+//   let kichik: string;
+//   if (word1.length > word2.length || word1.length === word2.length) {
+//     katta = word1;
+//     kichik = word2;
+//   } else {
+//     katta = word2;
+//     kichik = word1;
+//   }
+//   for (let i = 0; i < katta?.length; i++) {
+//     if(kichik[i]!==undefined){
+//         merged += word1?.split("")[i] + word2?.split("")[i];
+//     } else{
+//         merged += katta?.split('')[i]
+//     }
+//   }
+//   return merged;
+// }
+// console.log(mergeAlternately("ab", "pqrs"));
+function removeElement(nums, val) {
+    let k = 0;
+    while (nums.indexOf(val) != -1) {
+        nums.splice(nums.indexOf(val), 1);
+    }
+    k = nums.length;
+    console.log(nums);
+    return k;
+}
+console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
