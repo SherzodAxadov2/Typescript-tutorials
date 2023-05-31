@@ -5,6 +5,17 @@
 // console.log(anotherLink.href);
 let form = document.querySelector(".new-item-form");
 // form.checkValidity()
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes £${this.amount} for ${this.details}`;
+    }
+}
+let Invoices = [];
 // inputs
 const type = document.querySelector("#type");
 const toFrom = document.querySelector("#tofrom");
@@ -17,3 +28,8 @@ form.addEventListener("submit", (e) => {
     console.log(amount.valueAsNumber);
     form.reset();
 });
+const invOne = new Invoice("John", "market", 312);
+const invTwo = new Invoice("Marlo", "market", 5000);
+Invoices.push(invOne);
+Invoices.push(invTwo);
+Invoices.forEach((el) => console.log(el.format()));
