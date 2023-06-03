@@ -9,13 +9,7 @@ let form = document.querySelector(".new-item-form") as HTMLFormElement;
 // form.checkValidity()
 
 class Invoice {
-  client: string;
-  amount: number;
-  details: string;
-  constructor(c: string, d: string, a: number) {
-    this.client = c;
-    this.details = d;
-    this.amount = a;
+  constructor(readonly client: string, public details: string, public amount: number) {
   }
   format() {
     return `${this.client} owes £${this.amount} for ${this.details}`;
@@ -43,4 +37,11 @@ const invOne = new Invoice("John", "market", 312);
 const invTwo = new Invoice("Marlo", "market", 5000);
 Invoices.push(invOne);
 Invoices.push(invTwo);
-Invoices.forEach((el) => console.log(el.format()));
+Invoices.forEach((el) => {
+  console.log(el.format());
+});
+console.log(Invoices);
+
+// Property private only accessible within class 'Invoice'; can not access with extend class
+// Property protected only accessible within class 'Invoice' and its subclasses; can not access with extend class
+// Property readOnly you access it but not to change it
