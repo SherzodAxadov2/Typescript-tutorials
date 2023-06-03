@@ -6,7 +6,6 @@
 // console.log(anotherLink.href);
 
 let form = document.querySelector(".new-item-form") as HTMLFormElement;
-// form.checkValidity()
 
 import { Invoice } from "./classes/Invoice.js";
 let Invoices: Invoice[] = [];
@@ -31,8 +30,22 @@ const invTwo = new Invoice("Marlo", "market", 5000);
 Invoices.push(invOne);
 Invoices.push(invTwo);
 
-Invoices.forEach(el=>console.log(el.format()));
+interface isPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  calc(n: number): number;
+}
 
-console.log(Invoices);
+let greeting: isPerson = {
+  name: "John",
+  age: 34,
+  speak(a:string): void{
+    console.log(a);
+  },
+  calc(n:number): number{
+    return n
+  },
+}
 
-
+console.log(greeting.speak('hello world'));

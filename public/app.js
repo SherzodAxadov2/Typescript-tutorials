@@ -3,7 +3,6 @@
 // let anotherLink = document.querySelector(".github-link")! as HTMLAnchorElement;
 // console.log(anotherLink.href);
 let form = document.querySelector(".new-item-form");
-// form.checkValidity()
 import { Invoice } from "./classes/Invoice.js";
 let Invoices = [];
 // inputs
@@ -22,5 +21,14 @@ const invOne = new Invoice("John", "market", 312);
 const invTwo = new Invoice("Marlo", "market", 5000);
 Invoices.push(invOne);
 Invoices.push(invTwo);
-Invoices.forEach(el => console.log(el.format()));
-console.log(Invoices);
+let greeting = {
+    name: "John",
+    age: 34,
+    speak(a) {
+        console.log(a);
+    },
+    calc(n) {
+        return n;
+    },
+};
+console.log(greeting.speak('hello world'));
