@@ -6,6 +6,7 @@
 // console.log(anotherLink.href);
 
 import { Invoice } from "./classes/Invoice.js";
+import { ListTemplate } from "./classes/ListTemplate.js";
 import { Payment } from "./classes/Payment.js";
 import { HasFormatter } from "./Interfaces/HasFormatter.js";
 
@@ -29,6 +30,9 @@ const button = document.querySelector("button")!;
 
 let docs: HasFormatter[] = []
 
+const ul = document.querySelector('ul')!
+const list = new ListTemplate(ul)
+
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
@@ -38,9 +42,8 @@ form.addEventListener("submit", (e: Event) => {
   } else{
     doc = new Payment(toFrom.value, details.value, amount.valueAsNumber)
   }
-  docs.push(doc)
-
-  console.log(docs);
+  
+  list.render(doc, type.value, 'start');
   
   form.reset();
 });

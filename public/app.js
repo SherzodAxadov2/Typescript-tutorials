@@ -3,6 +3,7 @@
 // let anotherLink = document.querySelector(".github-link")! as HTMLAnchorElement;
 // console.log(anotherLink.href);
 import { Invoice } from "./classes/Invoice.js";
+import { ListTemplate } from "./classes/ListTemplate.js";
 import { Payment } from "./classes/Payment.js";
 let form = document.querySelector(".new-item-form");
 let Invoices = [];
@@ -17,6 +18,8 @@ const details = document.querySelector("#details");
 const amount = document.querySelector("#amount");
 const button = document.querySelector("button");
 let docs = [];
+const ul = document.querySelector('ul');
+const list = new ListTemplate(ul);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let doc;
@@ -26,8 +29,7 @@ form.addEventListener("submit", (e) => {
     else {
         doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
     }
-    docs.push(doc);
-    console.log(docs);
+    list.render(doc, type.value, 'start');
     form.reset();
 });
 // const invOne = new Invoice("John", "market", 312);
