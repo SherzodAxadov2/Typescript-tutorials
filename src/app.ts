@@ -36,10 +36,13 @@ form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
   let doc: HasFormatter;
+
+  let values: [string, string, number]
+  values = [toFrom.value, details.value, amount.valueAsNumber]
   if (type.value === "invoice") {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   list.render(doc, type.value, "start");
@@ -69,3 +72,13 @@ function identity<T>(param: T[]): number {
 }
 
 console.log(identity<object | number>([123, 323, 3243, 324, 234]));
+
+
+// tuples  
+
+let arr: [string, number, boolean] = ["fasd", 123, true];
+
+// arr[0] = false;
+// arr[1] = 'fsdfi';
+
+// arr[0] = 123;

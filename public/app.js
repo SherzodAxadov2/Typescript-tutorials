@@ -23,11 +23,13 @@ const list = new ListTemplate(ul);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let doc;
+    let values;
+    values = [toFrom.value, details.value, amount.valueAsNumber];
     if (type.value === "invoice") {
-        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, "start");
     form.reset();
@@ -41,3 +43,8 @@ function identity(param) {
     return param === null || param === void 0 ? void 0 : param.length;
 }
 console.log(identity([123, 323, 3243, 324, 234]));
+// tuples  
+let arr = ["fasd", 123, true];
+// arr[0] = false;
+// arr[1] = 'fsdfi';
+// arr[0] = 123;
