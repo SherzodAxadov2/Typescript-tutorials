@@ -10,7 +10,6 @@ import { ListTemplate } from "./classes/ListTemplate.js";
 import { Payment } from "./classes/Payment.js";
 import { HasFormatter } from "./Interfaces/HasFormatter.js";
 
-
 let form = document.querySelector(".new-item-form") as HTMLFormElement;
 
 let Invoices: Invoice[] = [];
@@ -28,23 +27,23 @@ const details = document.querySelector("#details") as HTMLInputElement;
 const amount = document.querySelector("#amount") as HTMLInputElement;
 const button = document.querySelector("button")!;
 
-let docs: HasFormatter[] = []
+let docs: HasFormatter[] = [];
 
-const ul = document.querySelector('ul')!
-const list = new ListTemplate(ul)
+const ul = document.querySelector("ul")!;
+const list = new ListTemplate(ul);
 
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
-  let doc: HasFormatter
-  if(type.value === "invoice") {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber)
-  } else{
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber)
+  let doc: HasFormatter;
+  if (type.value === "invoice") {
+    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
   }
-  
-  list.render(doc, type.value, 'start');
-  
+
+  list.render(doc, type.value, "start");
+
   form.reset();
 });
 
@@ -52,3 +51,21 @@ form.addEventListener("submit", (e: Event) => {
 // const invTwo = new Invoice("Marlo", "market", 5000);
 // Invoices.push(invOne);
 // Invoices.push(invTwo);
+
+interface Resourse<T> {
+  name: string;
+  age: number;
+  data: T;
+}
+
+let userOne: Resourse<number> = {
+  name: "John",
+  age: 10,
+  data: 132,
+};
+
+function identity<T>(param: T[]): number {
+  return param?.length;
+}
+
+console.log(identity<object | number>([123, 323, 3243, 324, 234]));

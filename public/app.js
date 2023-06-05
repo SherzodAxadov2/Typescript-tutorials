@@ -18,7 +18,7 @@ const details = document.querySelector("#details");
 const amount = document.querySelector("#amount");
 const button = document.querySelector("button");
 let docs = [];
-const ul = document.querySelector('ul');
+const ul = document.querySelector("ul");
 const list = new ListTemplate(ul);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -29,10 +29,15 @@ form.addEventListener("submit", (e) => {
     else {
         doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
     }
-    list.render(doc, type.value, 'start');
+    list.render(doc, type.value, "start");
     form.reset();
 });
-// const invOne = new Invoice("John", "market", 312);
-// const invTwo = new Invoice("Marlo", "market", 5000);
-// Invoices.push(invOne);
-// Invoices.push(invTwo);
+let userOne = {
+    name: "John",
+    age: 10,
+    data: 132,
+};
+function identity(param) {
+    return param === null || param === void 0 ? void 0 : param.length;
+}
+console.log(identity([123, 323, 3243, 324, 234]));
